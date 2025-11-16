@@ -38,7 +38,7 @@ E = -J \sum_{\langle i,j \rangle} s_{ij} \cdot s_{i'j'}
 
 Where:
 
-- The sum is taken over all **nearest neighbor pairs** $\( \langle i,j \rangle \)$
+- The sum is taken over all **nearest neighbour pairs** $\( \langle i,j \rangle \)$
 - $\( J \)$ is the interaction constant (assumed $\( J > 0 \)$ for ferromagnetic coupling)
 - $\( s_{ij}, s_{i'j'} \in \{-1, +1\} \)$
 
@@ -46,7 +46,7 @@ Where:
 
 # Microstate Realisation
 
-In our compression scheme, we define the energy of a configuration using the above Hamiltonian and assume the system will settle into the configuration that **minimizes this energy**.
+In our compression scheme, we define the energy of a configuration using the above Hamiltonian and assume the system will settle into the configuration that **minimises this energy**.
 
 Therefore, for any defined physical system, the microstate it occupies at equilibrium corresponds to the **lowest-energy spin configuration** of the Ising lattice.
 

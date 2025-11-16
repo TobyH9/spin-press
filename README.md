@@ -30,7 +30,7 @@ $$\[
 s_{ij} \in \{-1, +1\}
 \]$$
 
-Each spin interacts with its **nearest neighbors** (up, down, left, right), and the energy of a given configuration of spins is defined by the **Ising Hamiltonian**:
+Each spin interacts with its **nearest neighbours** (up, down, left, right), and the energy of a given configuration of spins is defined by the **Ising Hamiltonian**:
 
 $$\[
 E = -J \sum_{\langle i,j \rangle} s_{ij} \cdot s_{i'j'}

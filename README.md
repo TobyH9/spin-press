@@ -50,18 +50,15 @@ A 2D binary array of size $\( N \times N \)$, where each element is a bit (0 or 
    - Bit `1` $\( \rightarrow \)$ Spin $\( +1 \)$
    - Bit `0` $\( \rightarrow \)$ Spin $\( -1 \)$
 
-2. **Define Target Ground State:**  
-   The resulting spin matrix is considered the **desired ground state** of a 2D Ising lattice.
-
-3. **Select Minimal Seed Set:**  
+2. **Select Minimal Seed Set:**  
    Identify a minimal subset of spin values and their positions such that:
-   - If only these spins are known and all others are random,
-   - Then, under energy minimization, the system will evolve into the **original spin matrix**.
+   - If only these spins are known and fixed in value, with all others being random,
+   - Then, under energy minimization to the ground state, the system will evolve into the **original spin matrix**.
 
 4. **Store the Seed Set:**  
    Save:
-   - A list of coordinates $\( (i, j) \)$
-   - Corresponding spin values $\( s_{ij} \in \{-1, +1\} \)$
+   - A list of coordinates of the necessary spins to fix: $\( (i, j) \)$
+   - Corresponding spin values for these fixed spins: $\( s_{ij} \in \{-1, +1\} \)$
 
 **Output:**  
 A compressed representation consisting of a small list of $\((i, j, s_{ij})\)$ entries.
@@ -83,7 +80,7 @@ A compressed representation consisting of a small list of $\((i, j, s_{ij})\)$ e
    - Initialize all other spins randomly (e.g., sampled from $\( \{-1, +1\} \))$
 
 2. **Find the Ground State:**
-   - Apply an energy minimization algorithm to evolve the lattice to the ground state.
+   - Apply an energy minimization algorithm to evolve the lattice to the ground state whilst keeping the original set of spins fixed throughout.
 
 3. **Map Spins Back to Bits:**
    - Convert each spin back to a bit:

@@ -6,20 +6,6 @@ An attempt at achieving data compression using inspiration from the Ising Model
 ## 📌 Overview
 This compression scheme introduces a novel approach to data representation by leveraging the Ising model, a mathematical model from statistical mechanics, to encode and reconstruct 2D binary data arrays.
 
-# Low-Temperature Limit Assumption for Compression
-
-In statistical mechanics, systems at equilibrium occupy microstates with probability defined by the **Boltzmann distribution**.
-
-For the purposes of this compression scheme, we will assume that all physical systems that are defined are operating at low enough temperature such that **only the lowest energy microstate has significant probability associated with it**.
-
-This means that the answer to the following question:
-
-> **"What microstate will any physical system in the compression scheme be in at equilibrium?"**
-
-is:
-
-> **"The microstate with the lowest associated energy."**
-
 ---
 
 # The 2D Ising Model
@@ -46,9 +32,7 @@ Where:
 
 # Microstate Realisation
 
-In our compression scheme, we define the energy of a configuration using the above Hamiltonian and assume the system will settle into the configuration that **minimises this energy**.
-
-Therefore, for any defined physical system, the microstate it occupies at equilibrium corresponds to the **lowest-energy spin configuration** of the Ising lattice.
+In our compression scheme, we define the energy of a configuration using the above Hamiltonian and try to find the ground state of the system.
 
 ---
 
@@ -98,9 +82,8 @@ A compressed representation consisting of a small list of $\((i, j, s_{ij})\)$ e
    - Set the spins at the given coordinates to their seed values
    - Initialize all other spins randomly (e.g., sampled from $\( \{-1, +1\} \))$
 
-2. **Relax to Equilibrium:**
-   - Apply an energy minimization algorithm to evolve the lattice
-   - Under the assumption of low temperature, the system will settle into the unique **ground state**
+2. **Find the Ground State:**
+   - Apply an energy minimization algorithm to evolve the lattice to the ground state.
 
 3. **Map Spins Back to Bits:**
    - Convert each spin back to a bit:
@@ -109,3 +92,5 @@ A compressed representation consisting of a small list of $\((i, j, s_{ij})\)$ e
 
 **Output:**  
 The reconstructed binary array — the original uncompressed data.
+
+Any knowledge on whether this problem is solvable as well as the theoretical limits of this scheme are welcomed. Please get in touch: toby.hallett9@gmail.com.
